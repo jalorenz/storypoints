@@ -5,6 +5,10 @@ on:
       - main
   pull_request:
 
+defaults:
+  run:
+    working-directory: ./source
+
 jobs:
   main:
     runs-on: ubuntu-latest
