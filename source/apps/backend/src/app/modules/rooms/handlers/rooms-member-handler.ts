@@ -19,7 +19,7 @@ export default class RoomsMemberHandler {
 
   createRoom() : CreatedRoomDto {
     const room = new Room()
-    const id = ObjectID.toString()
+    const id = new ObjectID().toString()
     this.rooms.set(id, room)
     return this.roomMapper.toCreatedRoomDto(id, room)
   }
