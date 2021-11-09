@@ -44,6 +44,22 @@ describe("RoomsGateway", () => {
   })
 
   describe("handleDisconnect", () => {
+    it("should pass event to handler", () => {
+      const socket = {} as Socket
 
+      gateway.handleDisconnect(socket)
+
+      expect(roomsMemberHandlerMock.removeSocket).toHaveBeenCalledWith(socket)
+    })
+  })
+
+  describe("vote", () => {
+    it.each([2, 3])("should pass event to handler", (estimation: number) => {
+      const socket = {} as Socket
+
+      gateway.vote(estimation, {} as Socket)
+
+      expect(roomsMemberHandlerMock.vote).toHaveBeenCalledWith(socket, estimation)
+    })
   })
 })
