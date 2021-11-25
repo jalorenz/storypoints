@@ -1,0 +1,8 @@
+{
+  "name": "storypoints",
+  "version": "1.0.0",
+  "dependencies": {},
+  "devDependencies": {
+    "semantic-release": "^18.0.1"
+  }
+}
