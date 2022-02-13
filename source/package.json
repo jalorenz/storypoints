@@ -21,12 +21,12 @@
     "react-dom": "17.0.2",
     "reflect-metadata": "0.1.13",
     "regenerator-runtime": "0.13.9",
-    "rxjs": "7.4.0",
+    "rxjs": "7.5.4",
     "sinon": "12.0.1",
     "tslib": "2.3.1"
   },
   "devDependencies": {
-    "@nestjs/schematics": "8.0.5",
+    "@nestjs/schematics": "8.0.6",
     "@nestjs/testing": "8.2.4",
     "@nrwl/cli": "13.2.3",
     "@nrwl/cypress": "13.2.3",
