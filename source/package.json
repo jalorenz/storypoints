@@ -39,7 +39,7 @@
     "@nrwl/tao": "13.2.3",
     "@nrwl/web": "13.2.3",
     "@nrwl/workspace": "13.2.3",
-    "@testing-library/react": "12.1.4",
+    "@testing-library/react": "12.1.5",
     "@testing-library/react-hooks": "7.0.2",
     "@types/jest": "27.5.2",
     "@types/node": "16.11.11",
