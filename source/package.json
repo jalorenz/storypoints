@@ -14,7 +14,7 @@
     "@nestjs/platform-express": "8.2.4",
     "@nestjs/platform-socket.io": "8.2.4",
     "@nestjs/websockets": "8.2.4",
-    "bson-objectid": "2.0.1",
+    "bson-objectid": "2.0.4",
     "core-js": "3.21.1",
     "proxy-mocks": "0.1.2",
     "react": "17.0.2",
