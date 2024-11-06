@@ -9,11 +9,11 @@
   },
   "private": true,
   "dependencies": {
-    "@nestjs/common": "8.2.4",
-    "@nestjs/core": "8.2.4",
-    "@nestjs/platform-express": "8.2.4",
-    "@nestjs/platform-socket.io": "8.2.4",
-    "@nestjs/websockets": "8.2.4",
+    "@nestjs/common": "8.4.7",
+    "@nestjs/core": "8.4.7",
+    "@nestjs/platform-express": "8.4.7",
+    "@nestjs/platform-socket.io": "8.4.7",
+    "@nestjs/websockets": "8.4.7",
     "bson-objectid": "2.0.1",
     "core-js": "3.21.1",
     "proxy-mocks": "0.1.2",
@@ -26,8 +26,8 @@
     "tslib": "2.3.1"
   },
   "devDependencies": {
-    "@nestjs/schematics": "8.0.8",
-    "@nestjs/testing": "8.2.4",
+    "@nestjs/schematics": "8.0.11",
+    "@nestjs/testing": "8.4.7",
     "@nrwl/cli": "13.2.3",
     "@nrwl/cypress": "13.2.3",
     "@nrwl/eslint-plugin-nx": "13.2.3",
