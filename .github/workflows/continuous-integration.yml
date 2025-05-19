@@ -1,0 +1,31 @@
+name: continuous-integration.yml
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  ci:
+    name: Continuous Integration
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v2
+      - name: Set up QEMU
+        uses: docker/setup-qemu-action@v2
+      - name: Install dependencies for backend
+        run: cd backend && npm install
+      - name: Install dependencies for frontend
+        run: cd frontend && npm install
+      - name: Test backend
+        run: cd backend && npm test
+      - name: Test frontend
+        run: cd frontend && npm test
+      - name: Build Docker image
+        run: docker buildx build -t storypoints:latest .
