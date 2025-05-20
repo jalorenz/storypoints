@@ -3,8 +3,6 @@
 import {useRouter} from 'next/navigation'
 import {useState} from 'react'
 
-export const dynamic = 'force-static'
-
 export default function Home() {
     const router = useRouter()
     const [enteredRoomId, setEnteredRoomId] = useState("")
