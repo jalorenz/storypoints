@@ -1,4 +1,4 @@
-FROM node:20 AS backend-builder
+FROM node:22 AS backend-builder
 
 WORKDIR /app
 
@@ -15,7 +15,7 @@ COPY backend .
 # Build the application
 RUN npm run build
 
-FROM node:20 AS frontend-builder
+FROM node:22 AS frontend-builder
 
 WORKDIR /app
 
@@ -32,7 +32,7 @@ COPY frontend .
 # Build the application
 RUN npm run build
 
-FROM node:20
+FROM node:22
 
 WORKDIR /app
 
