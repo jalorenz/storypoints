@@ -11,12 +11,12 @@ export default function Home() {
 
     const onCreateNewRoomClicked = () => {
         const randomRoomId = Math.floor(Math.random() * 10000)
-        router.push(`/rooms/${randomRoomId}`)
+        router.push(`/room?id=${randomRoomId}`)
     }
 
     const onJoinRoomClicked = () => {
         if (enteredRoomId) {
-            router.push(`/rooms/${enteredRoomId}`)
+            router.push(`/rooms?id=${enteredRoomId}`)
         }
     }
 
