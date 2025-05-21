@@ -20,7 +20,11 @@ export default function Home() {
 
     return <div className="flex justify-center">
         <div className="flex-col p-4">
-            <button className="text-xl" onClick={onCreateNewRoomClicked}>Create a new room</button>
+            <button
+                test-id="create-new-room-button"
+                className="text-xl"
+                onClick={onCreateNewRoomClicked}
+            >Create a new room</button>
         </div>
         <div className="flex-col p-4">
             <h1 className="text-xl mb-4">Join an existing room</h1>
