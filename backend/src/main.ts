@@ -1,5 +1,12 @@
 import { NestFactory } from '@nestjs/core';
-import { AppModule } from './app.module';
+import RoomsModule from './modules/rooms/rooms.module';
+import { Module } from '@nestjs/common';
+import StaticFrontendModule from './modules/static-frontend/static-frontend.module';
+
+@Module({
+  imports: [RoomsModule, StaticFrontendModule]
+})
+class AppModule {}
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
