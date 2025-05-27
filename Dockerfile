@@ -50,6 +50,7 @@ RUN npm install --production --prefix ./backend
 EXPOSE 3000
 
 ENV FRONTEND_DIRECTORY="/app/frontend"
+ENV FRONTEND_BASE_URL="http://localhost:3000"
 
 # Start the application
 CMD ["node", "backend/main.js"]
