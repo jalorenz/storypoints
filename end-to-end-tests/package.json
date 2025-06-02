@@ -14,5 +14,8 @@
   "private": true,
   "devDependencies": {
     "cypress": "^14.3.3"
+  },
+  "dependencies": {
+    "socket.io-client": "^4.8.1"
   }
 }

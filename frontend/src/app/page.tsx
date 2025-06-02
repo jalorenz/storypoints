@@ -14,7 +14,7 @@ export default function Home() {
 
     const onJoinRoomClicked = () => {
         if (enteredRoomId) {
-            router.push(`/rooms?id=${enteredRoomId}`)
+            router.push(`/room?id=${enteredRoomId}`)
         }
     }
 
