@@ -3,4 +3,4 @@ docker run -d -p 3333:3000 -e FRONTEND_BASE_URL=http://example.com storypoints-e
 
 npm install
 
-# npm run ui
+npm run ui
