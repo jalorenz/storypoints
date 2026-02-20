@@ -14,6 +14,67 @@ interface RoomUser {
     name: string
 }
 
+function getInitials(name: string): string {
+    return name
+        .split(" ")
+        .map((part) => part.charAt(0).toUpperCase())
+        .slice(0, 2)
+        .join("")
+}
+
+function TableView({ users }: { users: RoomUser[] }) {
+    const tableRadius = 120
+    const avatarRadius = 160
+    const avatarSize = 56
+
+    return (
+        <div
+            className="relative flex items-center justify-center"
+            style={{ width: avatarRadius * 2 + avatarSize, height: avatarRadius * 2 + avatarSize }}
+        >
+            {/* Round table */}
+            <div
+                className="absolute rounded-full bg-amber-800 opacity-80"
+                style={{
+                    width: tableRadius * 2,
+                    height: tableRadius * 2,
+                    top: "50%",
+                    left: "50%",
+                    transform: "translate(-50%, -50%)",
+                }}
+            />
+
+            {/* User avatars around the table */}
+            {users.map((user, index) => {
+                const angle = (index / Math.max(users.length, 1)) * 2 * Math.PI - Math.PI / 2
+                const x = Math.cos(angle) * avatarRadius
+                const y = Math.sin(angle) * avatarRadius
+                return (
+                    <div
+                        key={user.id}
+                        test-id={`room-user-${user.id}`}
+                        className="absolute flex flex-col items-center"
+                        style={{
+                            top: "50%",
+                            left: "50%",
+                            transform: `translate(calc(-50% + ${x}px), calc(-50% + ${y}px))`,
+                        }}
+                    >
+                        <div
+                            className="rounded-full bg-blue-500 flex items-center justify-center text-white font-semibold select-none"
+                            style={{ width: avatarSize, height: avatarSize, fontSize: 18 }}
+                            title={user.name}
+                        >
+                            {getInitials(user.name)}
+                        </div>
+                        <span className="mt-1 text-xs text-center max-w-16 truncate">{user.name}</span>
+                    </div>
+                )
+            })}
+        </div>
+    )
+}
+
 export default function RoomPage() {
     const searchParams = useSearchParams()
     const roomId = searchParams.get("id")
@@ -27,15 +88,8 @@ export default function RoomPage() {
 
     return <div className="flex space-between">
         <div className="flex-col flex-grow p-4">
-            <h1 className="text-xl">Room: {searchParams.get("id")}</h1>
-            <h2 className="text-lg mt-4">Users in this room:</h2>
-            <ul className="list-disc pl-5">
-                {users.map((user) => (
-                    <li key={user.id}
-                        test-id={`room-user-${user.id}`}
-                        className="text-m">{user.name} ({user.id})</li>
-                ))}
-            </ul>
+            <h1 className="text-xl mb-6">Room: {searchParams.get("id")}</h1>
+            <TableView users={users} />
         </div>
         <div className="flex-col p-4">
             <h1 className="text-xl mb-4">Room Info</h1>
